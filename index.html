@@ -3,20 +3,134 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>렉티 Lectie</title>
-<meta name="description" content="학교 LMS의 휴강·시험·마감을 대신 챙겨 주는 수업 앱">
+<title>렉티 Lectie 베타 신청</title>
+<meta name="description" content="학교 LMS의 휴강, 시험, 마감을 대신 챙기고 수업 녹음을 강의록과 복습으로 만들어 주는 수업 앱. 베타 참여를 받습니다.">
+<meta name="color-scheme" content="light dark">
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="beta.css">
 </head>
-<body>
+<body class="beta">
+<header class="bar">
+<div class="wrap bar-in">
+<a class="brand" href="/"><img class="mark" src="mark.svg" alt="">렉티</a>
+<a class="btn btn-sm" href="#apply">베타 신청</a>
+</div>
+</header>
+
 <main>
-<section class="hero">
-<img class="mark" src="mark.svg" alt="">
-<h1>렉티</h1>
-<p>휴강·시험·마감을 학교 LMS에서 대신 챙겨 드려요.</p>
-<p>수업 녹음은 강의록과 복습으로, 필기는 과목과 주차에 알아서.</p>
-<div class="links"><a href="privacy.html">개인정보 처리방침</a><a href="mailto:privacy@lectie.app">문의 privacy@lectie.app</a></div>
+<section class="top">
+<div class="wrap top-in">
+<div class="top-text">
+<h1>수업은 렉티가 챙깁니다</h1>
+<p class="lead">휴강, 시험, 마감은 학교 LMS에서 대신 확인하고, 녹음한 수업은 강의록과 복습으로 만들어 드려요.</p>
+<div class="actions">
+<a class="btn" href="#apply">베타 신청</a>
+<a class="link" href="demo/">화면 먼저 써 보기</a>
+</div>
+</div>
+<picture class="shot top-shot">
+<source srcset="beta/lms-dark.png" media="(prefers-color-scheme: dark)">
+<img src="beta/lms-light.png" width="600" height="1150" alt="렉티의 과목 화면. 다가오는 시험 D-3과 회차별 요약 노트가 보입니다. 견본 자료입니다.">
+</picture>
+</div>
+</section>
+
+<section class="feat">
+<div class="wrap feat-in">
+<picture class="shot">
+<source srcset="beta/review-dark.png" media="(prefers-color-scheme: dark)">
+<img src="beta/review-light.png" width="600" height="1150" loading="lazy" alt="렉티의 복습 화면. 오늘 복습 3개와 시작 단추, 복습 달력이 보입니다. 견본 자료입니다.">
+</picture>
+<div class="feat-text">
+<h2>녹음 한 번이면 복습 일정까지</h2>
+<p>수업을 녹음하면 강의록과 회차 정리가 만들어지고, 그 수업에서 뽑은 개념 객관식이 공강 시간에 맞춰 복습으로 잡혀요.</p>
+<p>녹음하는 중에도 튜터에게 물어볼 수 있어요. 튜터는 지금 듣는 수업 자료를 기준으로 답합니다.</p>
+</div>
+</div>
+</section>
+
+<section class="more">
+<div class="wrap">
+<h2>그 밖에 하는 일</h2>
+<dl class="rows">
+<div><dt>학교 연결</dt><dd>고려대 같은 LMS에서 공지, 과제, 시험 일정을 읽어 와요. 에브리타임처럼 과목을 직접 추가해도 됩니다.</dd></div>
+<div><dt>숙제 PDF</dt><dd>교재 연습문제를 잘라 풀이 여백을 둔 숙제 PDF로 만들어요.</dd></div>
+<div><dt>시험 정리본</dt><dd>쌓인 강의록과 자료로 시험 범위 정리본을 만들어요.</dd></div>
+<div><dt>필기</dt><dd>아이패드 필기와 폰에서 쓴 글 노트가 같은 과목, 같은 회차에 모여요.</dd></div>
+</dl>
+<p class="note">아이폰과 아이패드는 테스트플라이트로, 안드로이드는 구글 계정을 등록한 테스트로 초대합니다.</p>
+</div>
+</section>
+
+<section class="apply" id="apply">
+<div class="wrap apply-in">
+<div class="apply-head">
+<h2>베타 신청</h2>
+<p>신청해 주시면 초대 방법을 이메일로 안내해 드려요.</p>
+</div>
+
+<form id="beta-form" class="form" novalidate>
+<div class="field">
+<label for="f-name">이름</label>
+<input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required>
+</div>
+<div class="field">
+<label for="f-email">연락 이메일</label>
+<input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required>
+</div>
+<div class="field">
+<label for="f-school">학교</label>
+<input id="f-school" name="school" type="text" autocomplete="organization" maxlength="60" required>
+</div>
+
+<fieldset class="field checks" id="f-devices">
+<legend>쓰는 기기 (여러 개 선택)</legend>
+<label class="check"><input type="checkbox" name="devices" value="iphone">아이폰</label>
+<label class="check"><input type="checkbox" name="devices" value="ipad">아이패드</label>
+<label class="check"><input type="checkbox" name="devices" value="android">안드로이드</label>
+</fieldset>
+
+<div class="field">
+<label for="f-apple">테스트플라이트 초대용 애플 ID 이메일 (선택)</label>
+<input id="f-apple" name="apple_id" type="email" inputmode="email" maxlength="254" autocomplete="off">
+</div>
+<div class="field">
+<label for="f-google">안드로이드 테스트용 구글 계정 이메일 (선택)</label>
+<input id="f-google" name="google_account" type="email" inputmode="email" maxlength="254" autocomplete="off">
+</div>
+<div class="field">
+<label for="f-note">기대하는 점 한 줄 (선택)</label>
+<input id="f-note" name="note" type="text" maxlength="300">
+</div>
+
+<div class="consent">
+<label class="check"><input type="checkbox" name="consent" required>
+<span><b>개인정보 수집에 동의합니다</b> (필수)</span></label>
+<p class="fine">수집 항목은 이름, 이메일, 학교, 기기, 시험용 계정 이메일, 기대하는 점입니다. 목적은 베타 초대와 안내이고, 베타 종료 후 6개월까지 보관한 뒤 지웁니다. 동의하지 않으면 신청할 수 없습니다. 자세한 내용은 <a href="privacy.html">개인정보 처리방침</a>에 있어요.</p>
+<label class="check"><input type="checkbox" name="age14" required>
+<span><b>만 14세 이상입니다</b> (필수)</span></label>
+</div>
+
+<p id="form-msg" class="msg" role="status" aria-live="polite"></p>
+<button class="btn btn-wide" type="submit" id="f-submit">베타 신청하기</button>
+</form>
+
+<div id="done" class="done" role="status" tabindex="-1" hidden>
+<h3>신청이 접수됐어요</h3>
+<p>초대 방법을 입력하신 이메일로 안내해 드릴게요. 기다려 주셔서 감사합니다.</p>
+</div>
+</div>
 </section>
 </main>
+
+<footer class="foot">
+<div class="wrap foot-in">
+<span>렉티 Lectie</span>
+<a href="privacy.html">개인정보 처리방침</a>
+<a href="mailto:privacy@lectie.app">문의 privacy@lectie.app</a>
+</div>
+</footer>
+<script src="beta.js"></script>
 </body>
 </html>
