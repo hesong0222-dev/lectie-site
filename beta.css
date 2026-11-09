@@ -95,3 +95,9 @@ input[aria-invalid=true]{border-color:var(--red);border-width:2px}
 [hidden]{display:none!important}
 
 @media (prefers-reduced-motion:reduce){.btn{transition:none}.btn:active{transform:none}}
+.installs{display:grid;gap:16px}
+.install{border:1px solid var(--line);border-radius:12px;padding:22px}
+.install h3{margin:0 0 8px;font-size:18px}
+.install p{color:var(--ink2);margin:0 0 18px}
+.apply-in > .fine{grid-column:1/-1;margin:0}
+@media (min-width:720px){.installs{grid-template-columns:1fr 1fr}}

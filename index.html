@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>렉티 Lectie 베타 신청</title>
-<meta name="description" content="학교 LMS의 휴강, 시험, 마감을 대신 챙기고 수업 녹음을 강의록과 복습으로 만들어 주는 수업 앱. 베타 참여를 받습니다.">
+<title>렉티 Lectie</title>
+<meta name="description" content="학교 LMS의 휴강, 시험, 마감을 대신 챙기고 수업 녹음을 강의록과 복습으로 만들어 주는 수업 앱. 아이폰과 안드로이드에서 바로 설치할 수 있어요.">
 <meta name="color-scheme" content="light dark">
 <link rel="icon" href="favicon.png">
 <link rel="stylesheet" href="style.css">
@@ -14,7 +14,7 @@
 <header class="bar">
 <div class="wrap bar-in">
 <a class="brand" href="/"><img class="mark" src="mark.svg" alt="">렉티</a>
-<a class="btn btn-sm" href="#apply">베타 신청</a>
+<a class="btn btn-sm" href="#install">설치하기</a>
 </div>
 </header>
 
@@ -25,7 +25,7 @@
 <h1>수업은 렉티가 챙깁니다</h1>
 <p class="lead">휴강, 시험, 마감은 학교 LMS에서 대신 확인하고, 녹음한 수업은 강의록과 복습으로 만들어 드려요.</p>
 <div class="actions">
-<a class="btn" href="#apply">베타 신청</a>
+<a class="btn" href="#install">설치하기</a>
 <a class="link" href="demo/">화면 먼저 써 보기</a>
 </div>
 </div>
@@ -59,67 +59,29 @@
 <div><dt>시험 정리본</dt><dd>쌓인 강의록과 자료로 시험 범위 정리본을 만들어요.</dd></div>
 <div><dt>필기</dt><dd>아이패드 필기와 폰에서 쓴 글 노트가 같은 과목, 같은 회차에 모여요.</dd></div>
 </dl>
-<p class="note">아이폰과 아이패드는 테스트플라이트로, 안드로이드는 구글 계정을 등록한 테스트로 초대합니다.</p>
 </div>
 </section>
 
-<section class="apply" id="apply">
+<section class="apply" id="install">
 <div class="wrap apply-in">
 <div class="apply-head">
-<h2>베타 신청</h2>
-<p>신청해 주시면 초대 방법을 이메일로 안내해 드려요.</p>
+<h2>지금 설치하기</h2>
+<p>신청 없이 바로 받을 수 있어요. 설치한 뒤 학교를 고르면 시작됩니다.</p>
 </div>
 
-<form id="beta-form" class="form" novalidate>
-<div class="field">
-<label for="f-name">이름</label>
-<input id="f-name" name="name" type="text" autocomplete="name" maxlength="60" required>
+<div class="installs">
+<div class="install">
+<h3>아이폰 · 아이패드</h3>
+<p>애플의 테스트플라이트 앱으로 설치해요. 링크를 열면 테스트플라이트 설치부터 안내됩니다.</p>
+<a class="btn btn-wide" href="https://testflight.apple.com/join/r792kKZf">테스트플라이트로 설치</a>
 </div>
-<div class="field">
-<label for="f-email">연락 이메일</label>
-<input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required>
+<div class="install">
+<h3>안드로이드</h3>
+<p>설치 파일(APK, 17MB)을 받아 열어요. 처음이면 '출처를 알 수 없는 앱 설치'를 한 번 허용해 주세요.</p>
+<a class="btn btn-wide" href="https://app.lectie.app/lectie.apk">안드로이드 설치 파일 받기</a>
 </div>
-<div class="field">
-<label for="f-school">학교</label>
-<input id="f-school" name="school" type="text" autocomplete="organization" maxlength="60" required>
 </div>
-
-<fieldset class="field checks" id="f-devices">
-<legend>쓰는 기기 (여러 개 선택)</legend>
-<label class="check"><input type="checkbox" name="devices" value="iphone">아이폰</label>
-<label class="check"><input type="checkbox" name="devices" value="ipad">아이패드</label>
-<label class="check"><input type="checkbox" name="devices" value="android">안드로이드</label>
-</fieldset>
-
-<div class="field">
-<label for="f-apple">테스트플라이트 초대용 애플 ID 이메일 (선택)</label>
-<input id="f-apple" name="apple_id" type="email" inputmode="email" maxlength="254" autocomplete="off">
-</div>
-<div class="field">
-<label for="f-google">안드로이드 테스트용 구글 계정 이메일 (선택)</label>
-<input id="f-google" name="google_account" type="email" inputmode="email" maxlength="254" autocomplete="off">
-</div>
-<div class="field">
-<label for="f-note">기대하는 점 한 줄 (선택)</label>
-<input id="f-note" name="note" type="text" maxlength="300">
-</div>
-
-<div class="consent">
-<label class="check"><input type="checkbox" name="consent" required>
-<span><b>개인정보 수집에 동의합니다</b> (필수)</span></label>
-<p class="fine">수집 항목은 이름, 이메일, 학교, 기기, 시험용 계정 이메일, 기대하는 점입니다. 목적은 베타 초대와 안내이고, 베타 종료 후 6개월까지 보관한 뒤 지웁니다. 동의하지 않으면 신청할 수 없습니다. 자세한 내용은 <a href="privacy.html">개인정보 처리방침</a>에 있어요.</p>
-<label class="check"><input type="checkbox" name="age14" required>
-<span><b>만 14세 이상입니다</b> (필수)</span></label>
-</div>
-
-<p id="form-msg" class="msg" role="status" aria-live="polite"></p>
-<button class="btn btn-wide" type="submit" id="f-submit">베타 신청하기</button>
-</form>
-
-<div id="done" class="done" role="status" tabindex="-1" hidden>
-<h3>신청이 접수됐어요</h3>
-<p>초대 방법을 입력하신 이메일로 안내해 드릴게요. 기다려 주셔서 감사합니다.</p>
-</div>
+<p class="fine">만 14세 이상이 쓸 수 있어요. 수집하는 정보와 보관 기간은 <a href="privacy.html">개인정보 처리방침</a>에 있어요.</p>
 </div>
 </section>
 </main>
@@ -131,6 +93,5 @@
 <a href="mailto:privacy@lectie.app">문의 privacy@lectie.app</a>
 </div>
 </footer>
-<script src="beta.js"></script>
 </body>
 </html>
