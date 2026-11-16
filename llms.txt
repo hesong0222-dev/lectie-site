@@ -1,0 +1,13 @@
+# 렉티 Lectie
+
+> 대학생용 수업 앱. 학교 LMS의 휴강, 시험, 마감을 대신 확인해 알려 주고, 수업 녹음을 강의록과 복습 자료로 만든다. 아이폰(테스트플라이트)과 안드로이드(APK)에서 설치할 수 있다.
+
+## 주요 페이지
+- [첫 화면](https://lectie.app/): 기능 소개와 설치 링크
+- [체험판](https://lectie.app/demo/): 가상 학생의 한 주를 브라우저에서 직접 눌러 보는 견본
+- [개인정보 처리방침](https://lectie.app/privacy): 수집 항목, 보관 기간, Google API 제한적 사용
+- [계정 삭제](https://lectie.app/delete-account): 계정과 서버 자료 삭제 방법
+
+## 설치
+- 아이폰: https://testflight.apple.com/join/r792kKZf
+- 안드로이드: https://app.lectie.app/lectie.apk
