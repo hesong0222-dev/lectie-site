@@ -3,7 +3,7 @@
 <style>
 /* 레이아웃: 1920×1080 종이 한 장을 화면에 맞춰 줄이는 무대. 흰 종이 + 파란 선 + 빨간 펜(첨삭 전용). 한 가지 모습으로 고정. */
 :root{
-  --paper:#FFFFFF; --ink:#0E2A6B; --ink2:#3A4A6B; --mute:#7A86A3; --line:#D5DDF0;
+  --paper:#FFFFFF; --ink:#0E2A6B; --ink2:#3A4A6B; --mute:#5F6B88; --line:#D5DDF0;
   --blue:#2447C7; --blue-soft:#DCE5FB; --red:#D6420F; --stage:#0A1430;
   --sans:'IBM Plex Sans KR','Apple SD Gothic Neo','Noto Sans KR',sans-serif;
   --pen:'Nanum Pen Script','Apple SD Gothic Neo',cursive;
@@ -953,6 +953,7 @@ const M1={login:[{o:[16,370,358,46],at:.9,b:'다니는 학교를 고르면'}],
  cx:[{u:[28,140,566],at:7.9,b:'공지와 과제에서 마감·시험을 찾아 쌓아요'},
      {o:[16,332,184,90],at:10.3,b:'직접 넣은 일정은 하나도 없어요'}]};
 const IMG={login:'assets/p6_login.jpg',week:'assets/p6_week.jpg',note:'assets/p6_note.jpg',exam:'assets/p6_exam.jpg',tutor:'assets/app_tutor.jpg'};
+const ALT={week:'렉티 앱 한 주 시간표와 바뀐 수업, 마감 목록',note:'렉티 앱 수업 요약 노트와 근거 칩',exam:'렉티 앱 중간고사 정리본',tutor:'렉티 앱 막히면 튜터 화면'};
 function pO(x,y,w,h){const cx=x+w/2,cy=y+h/2;let d='';const N=44;for(let i=0;i<=N;i++){const a=-2.2+i/N*(Math.PI*2+.8),r=1+.035*i/N+.012*Math.sin(i*1.7);d+=(i?'L':'M')+(cx+Math.cos(a)*w/2*r).toFixed(1)+' '+(cy+Math.sin(a)*h/2*r).toFixed(1)}return d}
 function pU(x1,x2,y){let d='';const N=14;for(let i=0;i<=N;i++){const x=x1+(x2-x1)*i/N;d+=(i?'L':'M')+x.toFixed(1)+' '+(y-1.6*i/N+Math.sin(i*1.3)*.5).toFixed(1)}return d}
 const NS='http://www.w3.org/2000/svg';
@@ -963,7 +964,7 @@ const ST=['과목을 찾는 중','선형대수 · 공지를 읽는 중','확률�
 live.innerHTML='<div class="lt">'+SC.map((s,i)=>'<div class="lc" data-c="'+i+'"><em>0'+(i+1)+' · '+s.n+'</em><b>'+s.t+'</b><span>'+s.l+'</span></div>').join('')+
  '<ol class="ls">'+SC.map((s,i)=>'<li data-r="'+i+'"><i></i><u>'+(i+1)+'</u>'+s.n+'</li>').join('')+'</ol></div>'+
  '<div class="ph lph"><div class="win pw">'+
-  '<div class="scr" data-s="login"><img src="'+IMG.login+'" alt=""></div>'+
+  '<div class="scr" data-s="login"><img src="'+IMG.login+'" alt="렉티 앱 학교 고르기 화면"></div>'+
   '<div class="scr" data-s="sheet" style="background:transparent"><div class="sh"><div class="hd"><em>취소</em>학교 LMS 로그인</div>'+
    '<div class="bn">학교 계정으로 로그인해 주세요. 비밀번호는 학교 화면에만 들어가고 앱은 보지 않아요.</div>'+
    '<div class="top">학교 LMS</div><div class="bx"><b>로그인</b><div class="in">아이디<s class="d1"></s></div><div class="in">비밀번호<s class="d2"></s></div>'+
@@ -974,7 +975,7 @@ live.innerHTML='<div class="lt">'+SC.map((s,i)=>'<div class="lc" data-c="'+i+'">
    '<div class="bt">시작하기</div><div class="ht">일정은 계속 찾아서 채워 둘게요</div><div class="fl">일정을 찾았어요</div>'+
    ROWS.map((r,i)=>'<div class="rw" style="top:'+(578+i*44)+'px"><u>'+r[0]+'</u><b>'+r[1]+'</b><span>'+r[2]+'</span></div>').join('')+
    '<div class="mo">그 밖에 4개 더</div></div></div>'+
-  ['week','note','exam','tutor'].map(k=>'<div class="scr" data-s="'+k+'"><img src="'+IMG[k]+'" alt=""></div>').join('')+
+  ['week','note','exam','tutor'].map(k=>'<div class="scr" data-s="'+k+'"><img src="'+IMG[k]+'" alt="'+ALT[k]+'"></div>').join('')+
  '</div></div><svg class="lead" viewBox="0 0 1680 818"></svg>';
 const q=s=>live.querySelectorAll(s),q1=s=>live.querySelector(s),lead=q1('.lead');
 const scr={};q('.scr').forEach(e=>{scr[e.dataset.s]=e;const sv=document.createElementNS(NS,'svg');sv.setAttribute('viewBox','0 0 390 844');e.appendChild(sv)});
