@@ -8,14 +8,16 @@
 <meta name="color-scheme" content="light dark">
 <meta property="og:title" content="같은 수업 친구가 수업 정리를 보냈어요">
 <meta property="og:description" content="렉티에서 학교를 연결하면 같은 수업인지 확인하고 전체 정리를 열어 드려요.">
-<meta property="og:image" content="https://lectie.app/favicon.png">
+<meta property="og:image" content="https://lectie.app/og-share.png">
+<meta property="og:image:width" content="512">
+<meta property="og:image:height" content="512">
 <link rel="icon" href="/favicon.png">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/beta.css">
 <link rel="stylesheet" href="/share.css">
 </head>
 <body class="beta">
-<!-- 수업 정리 공유 페이지(lectie.app/s/<코드>). 정적 사이트라 없는 주소는 모두 이 파일이 받고, /s/ 주소면 공개 미리보기만 불러와 보여 준다.
+<!-- 수업 정리 공유 페이지. 새 링크는 /s/?c=<코드>(s/index.html, 200). 이 파일은 옛 링크 /s/<코드> 와 없는 주소를 받는다(응답 404).
      미리보기 API(class-share/preview)는 과목 이름·회차·보낸 사람 표시 이름·정리 앞부분 4줄·기한만 준다. 흐린 글은 실제 정리가 아닌 채움 글이다. -->
 <header class="bar">
 <div class="wrap bar-in">

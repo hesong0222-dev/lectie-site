@@ -1,11 +1,12 @@
-// 수업 정리 공유 페이지: 주소 /s/<코드> 의 코드로 공개 미리보기를 불러온다. 받은 글은 textContent 로만 넣는다.
+// 수업 정리 공유 페이지: 주소 /s/?c=<코드>(s/index.html, 200) 또는 옛 /s/<코드>(404.html) 의 코드로 공개 미리보기를 불러온다. 받은 글은 textContent 로만 넣는다.
 (function () {
   var API = "https://ycbsjewthfzhkuuysblv.supabase.co/functions/v1/class-share/preview?code=";
   var FRIEND = "같은 수업 친구";
   var $ = function (id) { return document.getElementById(id); };
   var show = function (id) { ["lost", "wait", "closed", "open"].forEach(function (k) { $(k).hidden = k !== id; }); };
-  var m = location.pathname.match(/^\/s\/([A-Za-z0-9]{6,12})\/?$/);
-  if (!m) { show("lost"); return; }
+  var q = new URLSearchParams(location.search).get("c") || "";
+  var m = /^\/s\/?$/.test(location.pathname) ? [null, q] : location.pathname.match(/^\/s\/([A-Za-z0-9]{6,12})\/?$/);
+  if (!m || !/^[A-Za-z0-9]{6,12}$/.test(m[1])) { show("lost"); return; }
   var code = m[1];
   document.title = "수업 정리 - 렉티";
   show("wait");
@@ -48,7 +49,7 @@
 
   $("app").href = "kr.classradar.app://share/" + code;
   $("copy").addEventListener("click", function () {
-    var b = this, url = "https://lectie.app/s/" + code;
+    var b = this, url = "https://lectie.app/s/?c=" + code;
     (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () { b.textContent = "복사했어요"; },
       function () { b.textContent = url; });
   });
