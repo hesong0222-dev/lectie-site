@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["LPZS48GB4D.kr.classradar.app"],
+        "appID": "LPZS48GB4D.kr.classradar.app",
+        "components": [{ "/": "/s/*", "comment": "수업 정리 공유 링크" }],
+        "paths": ["/s/*"]
+      }
+    ]
+  }
+}

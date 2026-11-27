@@ -1,0 +1,10 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "kr.classradar.app",
+      "sha256_cert_fingerprints": ["0B:87:E5:CD:E6:21:75:47:0D:92:E5:C5:45:E3:DD:B5:43:D3:96:FC:68:1F:D1:0D:63:7A:C8:C8:E4:FB:6C:B4"]
+    }
+  }
+]
